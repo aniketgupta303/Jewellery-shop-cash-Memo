@@ -8,111 +8,115 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <style>
     * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background-color: rgb(253, 246, 150);
-}
+    body {
+      background-color: rgb(253, 246, 150);
+    }
 
-.infoContainer {
-  height: 18vh;
-  width: 90%; /* Use percentage for width */
-  margin: 10px auto;
-  display: flex;
-  justify-content: space-around;
-}
+    .infoContainer {
+      height: 18vh;
+      width: 90%;
+      /* Use percentage for width */
+      margin: 10px auto;
+      display: flex;
+      justify-content: space-around;
+    }
 
-.devInfo {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Source Code Pro', monospace;
-}
+    .devInfo {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Source Code Pro', monospace;
+    }
 
-.name {
-  font-size: 3vw; /* Use vw for font size */
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-}
+    .name {
+      font-size: 3vw;
+      /* Use vw for font size */
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+    }
 
-.about {
-  font-size: 1.5vw; /* Use vw for font size */
-}
+    .about {
+      font-size: 1.5vw;
+      /* Use vw for font size */
+    }
 
-.devpic img,
-.devipic img {
-  height: 18vh;
-  width: 15vh;
-  margin-left: auto; /* Use auto to center */
-}
+    .devpic img,
+    .devipic img {
+      height: 18vh;
+      width: 15vh;
+      margin-left: auto;
+      /* Use auto to center */
+    }
 
-#remark {
-  margin-top: 2vw; /* Use vw for margin */
-}
+    #remark {
+      margin-top: 2vw;
+      /* Use vw for margin */
+    }
 
-.card-body {
-  margin-left: 0;
-}
+    .card-body {
+      margin-left: 0;
+    }
 
-.btn {
-  margin-top: 1vw; /* Use vw for margin */
-}
+    .btn {
+      margin-top: 1vw;
+      /* Use vw for margin */
+    }
 
-.maa {
-  height: 1vw;
-  width: 15vh;
-  margin-left: auto; /* Use auto to center */
-}
+    .maa {
+      height: 1vw;
+      width: 15vh;
+      margin-left: auto;
+      /* Use auto to center */
+    }
 
-@media print {
-  body {
-    background-color: #c0c25b;
-  }
+    @media print {
+      body {
+        background-color: #c0c25b;
+      }
 
-  .btn {
-    display: none;
-  }
+      .btn {
+        display: none;
+      }
 
-  .devInfo {
-    margin-left: 0;
-  }
+      .devInfo {
+        margin-left: 0;
+      }
 
-  
+      .row {
+        page-break-inside: avoid;
+        /* Prevent breaking inside the row */
+      }
 
-  .row {
-    page-break-inside: avoid; /* Prevent breaking inside the row */
-  }
+      .mb-1,
+      .mb-3 {
+        margin-bottom: 0px;
+        /* Adjust as needed for spacing between sections */
+      }
 
-  .mb-1,
-  .mb-3 {
-    margin-bottom: 0px; /* Adjust as needed for spacing between sections */
-  }
-
-  #remark {
-    margin-top: 20px;
-    margin-inline-start: 20px; /* Adjust as needed for spacing between remark and other sections */
-  }
-}
-
-
-/* Add more media queries as needed for different screen sizes */
-
+      #remark {
+        margin-top: 20px;
+        margin-inline-start: 20px;
+        /* Adjust as needed for spacing between remark and other sections */
+      }
+    }
   </style>
 </head>
 
 <body style="background-color: rgb(253, 246, 150);">
-  <h1 style="text-align: center;margin-bottom: 0;margin-top: 20px;font-size: 50px;font-weight: bolder;"><img src="/Jewellery-shop-cash-Memo/CashMemo/logo1.png
-" alt="" style="width: 180px;height: 160px;">&nbsp;New Shivraj Jewellers</h1>
+  <h1 style="text-align: center;margin-bottom: 0;margin-top: 20px;font-size: 50px;font-weight: bolder;">
+    <img src="/Jewellery-shop-cash-Memo/CashMemo/logo1.png" alt="" style="width: 180px;height: 160px;">&nbsp;New Shivraj
+    Jewellers
+  </h1>
   <h6 style="text-align: center;margin-top: -40px;">Dindyalpur, Siwan Pin:841506, Bihar <br>Mobile: 6205920990 </h6>
   <div class="container" style="margin-top: 50px;">
-
     <div class="card-body">
       <div class="row">
         <div class="col-8">
@@ -141,7 +145,6 @@ body {
           </div>
         </div>
         <div class="col-4">
-
           <div style="margin-top: 10px; margin-bottom: 10px;">
             <span class="input-group-text" id="basic-addon1">Invoice No.</span>
             <input type="number" class="form-control" placeholder="Invoice No." aria-label="Username"
@@ -187,9 +190,6 @@ body {
               <td><button type="button" class="btn btn-danger"
                   onclick="deleteRow(this.parentNode.parentNode.rowIndex)">X</button></td>
             </tr>
-
-            
-
           </tbody>
         </table>
 
@@ -201,7 +201,6 @@ body {
           <div class="col-8">
             <textarea name="Remark" id="remark" cols="50" rows="5"></textarea>
           </div>
-
 
           <div class="col-4">
             <div class=" mb-1">
@@ -238,6 +237,15 @@ body {
                 <td><button type="button" class="btn btn-success" onclick="GetPrint()">Print</button></td>
               </div>
             </div>
+            <!-- WhatsApp share button -->
+            <div class="row mt-2">
+              <div class="col text-center">
+                <a id="whatsapp-share" href="#" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                    style="width: 40px; height: 40px;">
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -245,39 +253,33 @@ body {
   </div>
 
   <script>
-
-
     function addRow() {
-  let table = document.getElementById("myTable");
-  let row = table.insertRow(-1); // Inserts a new row at the last position
+      let table = document.getElementById("myTable");
+      let row = table.insertRow(-1); // Inserts a new row at the last position
 
-  for (let i = 0; i < 8; i++) {
-    let cell = row.insertCell(i);
+      for (let i = 0; i < 8; i++) {
+        let cell = row.insertCell(i);
 
-    if (i === 0) {
-      cell.innerHTML = table.rows.length - 1;
-    } else if (i === 7) {
-      cell.innerHTML =
-        '<button type="button" class="btn btn-danger" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">X</button>';
-    } else if (i === 1) {
-      cell.innerHTML = '<input type="text" class="form-control" name="description" onchange="calculateRow(this)">';
-    } else if (i === 2) {
-      cell.innerHTML = '<input type="number" class="form-control " name="qty" onchange="calculateRow(this);">';
-    } else if (i === 3) {
-      cell.innerHTML = '<input type="text" class="form-control" name="wgt">';
-    } else if (i === 4) {
-      cell.innerHTML = '<input type="number" class="form-control " name="Amount" onchange="calculateRow(this);">';
-    } else if (i === 5) {
-      cell.innerHTML = '<input type="number" class="form-control " name="lbr" onchange="calculateRow(this);">';
-    } else if (i === 6) {
-      cell.innerHTML = '<input type="number" class="form-control" name="tot">';
+        if (i === 0) {
+          cell.innerHTML = table.rows.length - 1;
+        } else if (i === 7) {
+          cell.innerHTML =
+            '<button type="button" class="btn btn-danger" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">X</button>';
+        } else if (i === 1) {
+          cell.innerHTML = '<input type="text" class="form-control" name="description" onchange="calculateRow(this)">';
+        } else if (i === 2) {
+          cell.innerHTML = '<input type="number" class="form-control " name="qty" onchange="calculateRow(this);">';
+        } else if (i === 3) {
+          cell.innerHTML = '<input type="text" class="form-control" name="wgt">';
+        } else if (i === 4) {
+          cell.innerHTML = '<input type="number" class="form-control " name="Amount" onchange="calculateRow(this);">';
+        } else if (i === 5) {
+          cell.innerHTML = '<input type="number" class="form-control " name="lbr" onchange="calculateRow(this);">';
+        } else if (i === 6) {
+          cell.innerHTML = '<input type="number" class="form-control" name="tot">';
+        }
+      }
     }
-  }
-}
-
-
-
-
 
     function deleteRow(rowIndex) {
       let table = document.getElementById("myTable");
@@ -289,62 +291,66 @@ body {
     function GetPrint() {
       window.print();
     }
-
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <script>
     let total;
-function calculateRow(input) {
-  let row = input.closest('tr');
-  let amount = parseFloat(row.querySelector('[name="Amount"]').value) || 0;
-  let weight = parseFloat(row.querySelector('[name="wgt"]').value) || 0;
-  let lbr = parseFloat(row.querySelector('[name="lbr"]').value) || 0;
+    function calculateRow(input) {
+      let row = input.closest('tr');
+      let amount = parseFloat(row.querySelector('[name="Amount"]').value) || 0;
+      let weight = parseFloat(row.querySelector('[name="wgt"]').value) || 0;
+      let lbr = parseFloat(row.querySelector('[name="lbr"]').value) || 0;
 
-  let totalAmount = weight * amount + lbr;
-  row.querySelector('[name="tot"]').value = totalAmount.toFixed(2);
+      let totalAmount = weight * amount + lbr;
+      row.querySelector('[name="tot"]').value = totalAmount.toFixed(2);
 
-  // Recalculate total amount for all rows
-  let table = document.getElementById("myTable");
-  let rows = table.getElementsByTagName('tr');
-  let grandTotal = 0;
+      // Recalculate total amount for all rows
+      let table = document.getElementById("myTable");
+      let rows = table.getElementsByTagName('tr');
+      let grandTotal = 0;
 
-  for (let i = 1; i < rows.length; i++) { // Start from 1 to skip header row
-    let rowAmount = parseFloat(rows[i].querySelector('[name="Amount"]').value) || 0;
-    let rowWeight = parseFloat(rows[i].querySelector('[name="wgt"]').value) || 0;
-    let rowLbr = parseFloat(rows[i].querySelector('[name="lbr"]').value) || 0;
+      for (let i = 1; i < rows.length; i++) { // Start from 1 to skip header row
+        let rowAmount = parseFloat(rows[i].querySelector('[name="Amount"]').value) || 0;
+        let rowWeight = parseFloat(rows[i].querySelector('[name="wgt"]').value) || 0;
+        let rowLbr = parseFloat(rows[i].querySelector('[name="lbr"]').value) || 0;
 
-    let rowTotalAmount = rowWeight * rowAmount + rowLbr;
-    rows[i].querySelector('[name="tot"]').value = rowTotalAmount.toFixed(2);
+        let rowTotalAmount = rowWeight * rowAmount + rowLbr;
+        rows[i].querySelector('[name="tot"]').value = rowTotalAmount.toFixed(2);
 
-    grandTotal += rowTotalAmount; // Accumulate total amount for all rows
-  }
+        grandTotal += rowTotalAmount; // Accumulate total amount for all rows
+      }
 
-  // Update grand total
-  let sgst = (grandTotal * 1.5) / 100;
-  let cgst = (grandTotal * 1.5) / 100;
-  let total = grandTotal + sgst + cgst;
-  document.getElementById('cgst').value = cgst.toFixed(2);
-  document.getElementById('sgst').value = sgst.toFixed(2);
-  document.getElementById('FTotal').value = total.toFixed(2);
+      // Update grand total
+      let sgst = (grandTotal * 1.5) / 100;
+      let cgst = (grandTotal * 1.5) / 100;
+      let total = grandTotal + sgst + cgst;
+      document.getElementById('cgst').value = cgst.toFixed(2);
+      document.getElementById('sgst').value = sgst.toFixed(2);
+      document.getElementById('FTotal').value = total.toFixed(2);
+    }
 
-}
-
-
-  function paiddue() {
-    let grandTotal = parseFloat(document.getElementById('FTotal').value) || 0;
-    let paid = parseFloat(document.getElementById('paid').value) || 0;
-    document.getElementById('due').value = (grandTotal - paid).toFixed(2);
-  }
-
-
+    function paiddue() {
+      let grandTotal = parseFloat(document.getElementById('FTotal').value) || 0;
+      let paid = parseFloat(document.getElementById('paid').value) || 0;
+      document.getElementById('due').value = (grandTotal - paid).toFixed(2);
+    }
   </script>
+
+  <script>
+    document.getElementById('whatsapp-share').addEventListener('click', function () {
+      let customerName = document.querySelector('[placeholder="Enter Customer Name"]').value;
+      let invoiceNo = document.querySelector('[placeholder="Invoice No."]').value;
+      let totalAmount = document.getElementById('FTotal').value;
+
+      let message = `Customer Name: ${customerName}%0AInvoice No.: ${invoiceNo}%0ATotal Amount: ${totalAmount}`;
+      let whatsappUrl = `https://api.whatsapp.com/send?text=${message}`;
+      this.href = whatsappUrl;
+    });
+  </script>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
-
 </body>
 
 </html>
