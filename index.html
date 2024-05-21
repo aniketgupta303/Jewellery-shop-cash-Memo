@@ -233,6 +233,13 @@ body {
               <input type="text" class="form-control" id="due" name="due" aria-label="Username"
                 aria-describedby="basic-addon1">
             </div>
+              <div class="row">
+  <div class="col" style="margin: left 0;">
+    <button type="button" class="btn btn-success" onclick="GetPrint()">Print</button>
+    <button type="button" class="btn btn-primary" onclick="shareReceipt()">Share via WhatsApp</button>
+  </div>
+</div>
+
             <div class="row">
               <div class="col" style="margin: left 0;">
                 <td><button type="button" class="btn btn-success" onclick="GetPrint()">Print</button></td>
@@ -342,6 +349,21 @@ function calculateRow(input) {
 
   </script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    function shareReceipt() {
+  // Get the content of the receipt
+  let receiptContent = document.getElementById('receiptContent').innerText;
+
+  // Format the content as needed
+  let formattedContent = encodeURIComponent(receiptContent); // Encode URI component
+
+  // Construct the WhatsApp sharing URL
+  let whatsappURL = `whatsapp://send?text=${formattedContent}`;
+
+  // Open the sharing URL
+  window.location.href = whatsappURL;
+}
+    </script>
 
 
 
