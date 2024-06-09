@@ -1,356 +1,547 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CashMemo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CashMemo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-    }
-
-    .infoContainer {
-      /* background-color: rgb(255, 0, 208); */
-      height: 18vh;
-      width: 70vw;
-      margin: 10px auto;
-      margin-left: 0px;
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .devInfo {
-      display: flex;
-      margin-left: -490px;
-      /* // */
-      /* justify-content: center; */
-      flex-direction: column;
-      font-family: 'Source Code Pro', monospace;
-
-    }
-
-    .name {
-      font-size: 35px;
-      font-weight: bold;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .about {
-      /* font-weight: bold; */
-      font-size: 20px;
-    }
-
-    .devpic img {
-      height: 18vh;
-      width: 15vh;
-      margin-left: 80%;
-      /* // */
-
-    }
-
-    .devipic img {
-      height: 18vh;
-      width: 15vh;
-      margin-left: 80%;
-      /* // */
-
-    }
-
-    #remark {
-      /* background-color: rgb(255, 0, 208); */
-      margin-top: 40px;
-    }
-
-    .card-body {
-      margin-left: -90px;
-    }
-
-    .btn {
-      margin-top: 10px;
-    }
-
-    .maa {
-      height: 10px;
-      width: 15vh;
-      margin-left: 80%;
-    }
-
-    @media print {
       body {
-    background-color: #c0c25b;
-  }
-      .btn {
-        display: none;
+        background-color: rgb(253, 246, 150);
+      }
+
+      .infoContainer {
+        height: 18vh;
+        width: 90%;
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-around;
       }
 
       .devInfo {
-        margin-left: -90px;
-        /* // */
+        display: flex;
+        flex-direction: column;
+        font-family: "Source Code Pro", monospace;
       }
 
+      .name {
+        font-size: 3vw;
+        font-weight: bold;
+        font-family: "Playfair Display", serif;
+      }
+
+      .about {
+        font-size: 1.5vw;
+      }
+
+      .devpic img,
       .devipic img {
-        margin-left: 15%;
-        /* // */
+        height: 18vh;
+        width: 15vh;
+        margin-left: auto;
       }
 
-      .devpic img {
-        margin-left: 60%;
+      #remark {
+        margin-top: 2vw;
       }
 
-    }
-  </style>
-</head>
+      .card-body {
+        margin-left: 0;
+      }
 
-<body style="background-color: rgb(253, 246, 150);">
-  <h1 style="text-align: center;margin-bottom: 0;margin-top: 20px;font-size: 50px;font-weight: bolder;"><img src="logo1.png" alt="Aniket" style="width: 180px;height: 160px;">&nbsp;New Shivraj Jewellers</h1>
-  <h6 style="text-align: center;margin-top: -40px;">Dindyalpur, Siwan Pin:841506, Bihar <br>Mobile: 6205920990 </h6>
-  <div class="container" style="margin-top: 50px;">
+      .btn {
+        margin-top: 1vw;
+      }
 
-    <div class="card-body">
-      <div class="row">
-        <div class="col-8">
-          <div class="input-group mb-3" style="margin-top: 10px;">
-            <span class="input-group-text" id="basic-addon1">Customer Name</span>
-            <input type="text" class="form-control" placeholder="Enter Customer Name" aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
+      .maa {
+        height: 1vw;
+        width: 15vh;
+        margin-left: auto;
+      }
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Address</span>
-            <input type="text" class="form-control" placeholder="address" aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
+      @media print {
+        body {
+          background-color: #c0c25b;
+        }
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Mob. No.</span>
-            <input type="text" class="form-control" placeholder="Mob.no." aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
+        .btn {
+          display: none;
+        }
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">City</span>
-            <input type="text" class="form-control" placeholder="city" aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
-        </div>
-        <div class="col-4">
+        .devInfo {
+          margin-left: 0;
+        }
 
-          <div style="margin-top: 10px; margin-bottom: 10px;">
-            <span class="input-group-text" id="basic-addon1">Invoice No.</span>
-            <input type="number" class="form-control" placeholder="Invoice No." aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
+        .row {
+          page-break-inside: avoid;
+        }
 
-          <div style="margin-bottom: 5px;">
-            <span class="input-group-text" id="basic-addon1">Date</span>
-            <input type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
+        .mb-1,
+        .mb-3 {
+          margin-bottom: 0px;
+        }
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Pin:</span>
-            <input type="text" class="form-control" placeholder="Pin Code" aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
-        </div>
+        #remark {
+          margin-top: 20px;
+          margin-inline-start: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(253, 246, 150)">
+    <h1
+      style="
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 20px;
+        font-size: 50px;
+        font-weight: bolder;
+      "
+    >
+      <img
+        src="logo1.png"
+        alt=""
+        style="width: 180px; height: 160px"
+      />&nbsp;New Shivraj Jewellers
+    </h1>
+    <h6 style="text-align: center; margin-top: -40px">
+      Dindyalpur, Siwan Pin:841506, Bihar <br />Mobile: 6205920990,7301766081
+      <br />
+      <span style="color: red">GST: 10HIGPK1431J1ZM</span>
+    </h6>
 
-        <table id="myTable" class=" ">
-          <thead class="head">
-            <tr>
-              <th scope="col" style="width: 5%; background-color: rgb(249, 40, 40);">No.</th>
-              <th scope="col" style="width: 40%; padding-left: 20px; background-color: rgb(249, 40, 40);">Item
-                Discription</th>
-              <th scope="col" style="width: 10%; padding-left: 20px; background-color: rgb(249, 40, 40);">PCS</th>
-              <th scope="col" style="width: 10%; padding-left: 20px; background-color: rgb(249, 40, 40);">Weight</th>
-              <th scope="col" style="width: 15%; padding-left: 20px; background-color: rgb(249, 40, 40);">Amount</th>
-              <th scope="col" style="width: 15%; padding-left: 20px; background-color: rgb(249, 40, 40);">Lbr Cost</th>
-              <th scope="col" style="width: 15%; padding-left: 20px; background-color: rgb(249, 40, 40);">Total Amount
-              </th>
-              <th scope="col" style="background-color: rgb(249, 40, 40);"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td> 1 </td>
-              <td><input type="text" class="form-control "></td>
-              <td><input type="number" class="form-control " name="qty" onchange="calculateRow(this);"></td>
-              <td><input type="text" class="form-control " name="wgt"></td>
-              <td><input type="number" class="form-control " name="Amount" onchange="calculateRow(this);"></td>
-              <td><input type="number" class="form-control " name="lbr" onchange="calculateRow(this);"></td>
-              <td><input type="number" class="form-control" name="tot"></td>
-              <td><button type="button" class="btn btn-danger"
-                  onclick="deleteRow(this.parentNode.parentNode.rowIndex)">X</button></td>
-            </tr>
-
-            
-
-          </tbody>
-        </table>
-
-        <div class="col">
-          <td><button type="button" class="btn btn-success" onclick="addRow()">Add Row</button></td>
-        </div>
-
+    <div class="container" style="margin-top: 50px">
+      <div class="card-body">
         <div class="row">
           <div class="col-8">
-            <textarea name="Remark" id="remark" cols="50" rows="5"></textarea>
+            <div class="input-group mb-3" style="margin-top: 10px">
+              <span class="input-group-text" id="basic-addon1"
+                >Customer Name</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Customer Name"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Address</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="address"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Mob. No.</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Mob.no."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">City</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="city"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              <span class="input-group-text" id="basic-addon1"
+                >Invoice No.</span
+              >
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Invoice No."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+
+            <div style="margin-bottom: 5px">
+              <span class="input-group-text" id="basic-addon1">Date</span>
+              <input
+                type="date"
+                class="form-control"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Pin:</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Pin Code"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
           </div>
 
+          <table id="myTable" class=" ">
+            <thead class="head">
+              <tr>
+                <th
+                  scope="col"
+                  style="width: 5%; background-color: rgb(249, 40, 40)"
+                >
+                  No.
+                </th>
+                <th
+                  scope="col"
+                  style="
+                    width: 40%;
+                    padding-left: 20px;
+                    background-color: rgb(249, 40, 40);
+                  "
+                >
+                  Item Discription
+                </th>
+                <th
+                  scope="col"
+                  style="
+                    width: 10%;
+                    padding-left: 20px;
+                    background-color: rgb(249, 40, 40);
+                  "
+                >
+                  PCS
+                </th>
+                <th
+                  scope="col"
+                  style="
+                    width: 10%;
+                    padding-left: 20px;
+                    background-color: rgb(249, 40, 40);
+                  "
+                >
+                  Weight
+                </th>
+                <th
+                  scope="col"
+                  style="
+                    width: 15%;
+                    padding-left: 20px;
+                    background-color: rgb(249, 40, 40);
+                  "
+                >
+                  Amount
+                </th>
+                <th
+                  scope="col"
+                  style="
+                    width: 15%;
+                    padding-left: 20px;
+                    background-color: rgb(249, 40, 40);
+                  "
+                >
+                  Lbr Cost
+                </th>
+                <th
+                  scope="col"
+                  style="
+                    width: 15%;
+                    padding-left: 20px;
+                    background-color: rgb(249, 40, 40);
+                  "
+                >
+                  Total Amount
+                </th>
+                <th scope="col" style="background-color: rgb(249, 40, 40)"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><input type="text" class="form-control" /></td>
+                <td>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="qty"
+                    onchange="calculateRow(this);"
+                  />
+                </td>
+                <td><input type="text" class="form-control" name="wgt" /></td>
+                <td>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="Amount"
+                    onchange="calculateRow(this);"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="lbr"
+                    onchange="calculateRow(this);"
+                  />
+                </td>
+                <td><input type="number" class="form-control" name="tot" /></td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    onclick="deleteRow(this.parentNode.parentNode.rowIndex)"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <div class="col-4">
-            <div class=" mb-1">
-              <span class="" id="basic-addon1">Add. CGST</span>
-              <input type="text" class="form-control" id="cgst" name="cgst" aria-label="Username"
-                aria-describedby="basic-addon1">
-            </div>
-
-            <div class=" mb-1">
-              <span class="" id="basic-addon1">Add. SGST</span>
-              <input type="text" class="form-control" id="sgst" name="sgst" aria-label="Username"
-                aria-describedby="basic-addon1">
-            </div>
-
-            <div class=" mb-1">
-              <span class="" id="basic-addon1">Total Amount</span>
-              <input type="text" class="form-control" id="FTotal" name="FTotal" aria-label="Username"
-                aria-describedby="basic-addon1">
-            </div>
-
-            <div class=" mb-3">
-              <span class="" id="basic-addon1">Paid amount</span>
-              <input type="text" class="form-control" id="paid" name="paid" aria-label="Username"
-                aria-describedby="basic-addon1" onchange="paiddue()">
-            </div>
-
-            <div class=" mb-3">
-              <span class="" id="basic-addon1">Due amount</span>
-              <input type="text" class="form-control" id="due" name="due" aria-label="Username"
-                aria-describedby="basic-addon1">
-            </div>
+          <div class="col">
+            <button type="button" class="btn btn-success" onclick="addRow()">
+              Add Item
+            </button>
           </div>
         </div>
 
-
+        <div class="row" style="margin-top: 20px">
+          <div class="col-8">
+            <h4 id="remark">Remarks:</h4>
+            <textarea
+              class="form-control"
+              name="remark"
+              id=""
+              cols="10"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-1">
+              <span class="input-group-text" id="basic-addon1">Sub Total</span>
+              <input
+                type="number"
+                class="form-control"
+                id="subTotal"
+                placeholder=""
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group mb-1">
+              <span class="input-group-text" id="basic-addon1">GST</span>
+              <input
+                type="number"
+                class="form-control"
+                id="gst"
+                placeholder=""
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group mb-1">
+              <span class="input-group-text" id="basic-addon1">Net Total</span>
+              <input
+                type="number"
+                class="form-control"
+                id="netTotal"
+                placeholder=""
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group mb-1">
+              <span class="input-group-text" id="basic-addon1">Received</span>
+              <input
+                type="number"
+                class="form-control"
+                id="received"
+                placeholder=""
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group mb-1">
+              <span class="input-group-text" id="basic-addon1">Balance</span>
+              <input
+                type="number"
+                class="form-control"
+                id="balance"
+                placeholder=""
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button
+          type="button"
+          class="btn btn-warning"
+          style="margin-top: 10px"
+          onclick="window.print()"
+        >
+          Print Receipt
+        </button>
+        <button
+          type="button"
+          class="btn btn-info"
+          style="margin-top: 10px"
+          onclick="shareReceipt()"
+        >
+          Share on WhatsApp
+        </button>
       </div>
     </div>
-  </div>
+    <script>
+      // Add new row
+      function addRow() {
+        var table = document
+          .getElementById("myTable")
+          .getElementsByTagName("tbody")[0];
+        var newRow = table.insertRow();
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+        var cell5 = newRow.insertCell(4);
+        var cell6 = newRow.insertCell(5);
+        var cell7 = newRow.insertCell(6);
+        var cell8 = newRow.insertCell(7);
 
-  <div class="row">
-    <div class="col" style="margin-left: 400px;">
-      <td><button type="button" class="btn btn-success" onclick="GetPrint()">Print</button></td>
-    </div>
-  </div>
+        var rowCount = table.rows.length;
+        cell1.innerHTML = rowCount;
 
+        cell2.innerHTML = '<input type="text" class="form-control" />';
+        cell3.innerHTML =
+          '<input type="number" class="form-control" name="qty" onchange="calculateRow(this);" />';
+        cell4.innerHTML =
+          '<input type="text" class="form-control" name="wgt" />';
+        cell5.innerHTML =
+          '<input type="number" class="form-control" name="Amount" onchange="calculateRow(this);" />';
+        cell6.innerHTML =
+          '<input type="number" class="form-control" name="lbr" onchange="calculateRow(this);" />';
+        cell7.innerHTML =
+          '<input type="number" class="form-control" name="tot" />';
+        cell8.innerHTML =
+          '<button type="button" class="btn btn-danger" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">X</button>';
+      }
 
+      // Delete row
+      function deleteRow(row) {
+        document.getElementById("myTable").deleteRow(row);
+      }
 
-  <script>
+      // Calculate row total
+      function calculateRow(input) {
+        var row = input.parentNode.parentNode;
+        var qty = parseFloat(row.querySelector('input[name="qty"]').value) || 0;
+        var amount =
+          parseFloat(row.querySelector('input[name="Amount"]').value) || 0;
+        var lbr = parseFloat(row.querySelector('input[name="lbr"]').value) || 0;
 
+        var total = qty * amount + lbr;
+        row.querySelector('input[name="tot"]').value = total;
 
-    function addRow() {
-  let table = document.getElementById("myTable");
-  let row = table.insertRow(-1); // Inserts a new row at the last position
+        calculateTotals();
+      }
 
-  for (let i = 0; i < 8; i++) {
-    let cell = row.insertCell(i);
+      // Calculate totals
+      function calculateTotals() {
+        var subTotal = 0;
+        var table = document
+          .getElementById("myTable")
+          .getElementsByTagName("tbody")[0];
+        for (var i = 0; i < table.rows.length; i++) {
+          var row = table.rows[i];
+          subTotal +=
+            parseFloat(row.querySelector('input[name="tot"]').value) || 0;
+        }
 
-    if (i === 0) {
-      cell.innerHTML = table.rows.length - 1;
-    } else if (i === 7) {
-      cell.innerHTML =
-        '<button type="button" class="btn btn-danger" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">X</button>';
-    } else if (i === 1) {
-      cell.innerHTML = '<input type="text" class="form-control" name="description" onchange="calculateRow(this)">';
-    } else if (i === 2) {
-      cell.innerHTML = '<input type="number" class="form-control " name="qty" onchange="calculateRow(this);">';
-    } else if (i === 3) {
-      cell.innerHTML = '<input type="text" class="form-control" name="wgt">';
-    } else if (i === 4) {
-      cell.innerHTML = '<input type="number" class="form-control " name="Amount" onchange="calculateRow(this);">';
-    } else if (i === 5) {
-      cell.innerHTML = '<input type="number" class="form-control " name="lbr" onchange="calculateRow(this);">';
-    } else if (i === 6) {
-      cell.innerHTML = '<input type="number" class="form-control" name="tot">';
-    }
-  }
-}
+        var gst = subTotal * 0.05; // assuming GST is 5%
+        var netTotal = subTotal + gst;
 
+        document.getElementById("subTotal").value = subTotal.toFixed(2);
+        document.getElementById("gst").value = gst.toFixed(2);
+        document.getElementById("netTotal").value = netTotal.toFixed(2);
+        document.getElementById("balance").value = (
+          netTotal -
+          (parseFloat(document.getElementById("received").value) || 0)
+        ).toFixed(2);
+      }
 
+      // Share on WhatsApp
+      function shareReceipt() {
+        var customerName = document.querySelector(
+          'input[placeholder="Enter Customer Name"]'
+        ).value;
+        var invoiceNo = document.querySelector(
+          'input[placeholder="Invoice No."]'
+        ).value;
+        var date = document.querySelector('input[type="date"]').value;
+        var subTotal = document.getElementById("subTotal").value;
+        var gst = document.getElementById("gst").value;
+        var netTotal = document.getElementById("netTotal").value;
+        var received = document.getElementById("received").value;
+        var balance = document.getElementById("balance").value;
 
+        var items = [];
+        var table = document
+          .getElementById("myTable")
+          .getElementsByTagName("tbody")[0];
+        for (var i = 0; i < table.rows.length; i++) {
+          var row = table.rows[i];
+          var description = row.cells[1].querySelector("input").value;
+          var qty = row.cells[2].querySelector("input").value;
+          var weight = row.cells[3].querySelector("input").value;
+          var amount = row.cells[4].querySelector("input").value;
+          var lbr = row.cells[5].querySelector("input").value;
+          var tot = row.cells[6].querySelector("input").value;
+          items.push(
+            `${description}, PCS: ${qty}, Weight: ${weight}, Amount: ${amount}, Lbr Cost: ${lbr}, Total Amount: ${tot}`
+          );
+        }
 
+        var itemsText = items.join("\n");
 
-    function deleteRow(rowIndex) {
-      let table = document.getElementById("myTable");
-      table.deleteRow(rowIndex);
-    }
-  </script>
+        var message = `New Shivraj Jewellers\n\nCustomer Name: ${customerName}\nInvoice No.: ${invoiceNo}\nDate: ${date}\n\nItems:\n${itemsText}\n\nSub Total: ${subTotal}\nGST: ${gst}\nNet Total: ${netTotal}\nReceived: ${received}\nBalance: ${balance}\n\nThank you for your purchase!`;
 
-  <script>
-    function GetPrint() {
-      window.print();
-    }
-
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-
-  <script>
-    let total;
-function calculateRow(input) {
-  let row = input.closest('tr');
-  let amount = parseFloat(row.querySelector('[name="Amount"]').value) || 0;
-  let weight = parseFloat(row.querySelector('[name="wgt"]').value) || 0;
-  let lbr = parseFloat(row.querySelector('[name="lbr"]').value) || 0;
-
-  let totalAmount = weight * amount + lbr;
-  row.querySelector('[name="tot"]').value = totalAmount.toFixed(2);
-
-  // Recalculate total amount for all rows
-  let table = document.getElementById("myTable");
-  let rows = table.getElementsByTagName('tr');
-  let grandTotal = 0;
-
-  for (let i = 1; i < rows.length; i++) { // Start from 1 to skip header row
-    let rowAmount = parseFloat(rows[i].querySelector('[name="Amount"]').value) || 0;
-    let rowWeight = parseFloat(rows[i].querySelector('[name="wgt"]').value) || 0;
-    let rowLbr = parseFloat(rows[i].querySelector('[name="lbr"]').value) || 0;
-
-    let rowTotalAmount = rowWeight * rowAmount + rowLbr;
-    rows[i].querySelector('[name="tot"]').value = rowTotalAmount.toFixed(2);
-
-    grandTotal += rowTotalAmount; // Accumulate total amount for all rows
-  }
-
-  // Update grand total
-  let sgst = (grandTotal * 1.5) / 100;
-  let cgst = (grandTotal * 1.5) / 100;
-  let total = grandTotal + sgst + cgst;
-  document.getElementById('cgst').value = cgst.toFixed(2);
-  document.getElementById('sgst').value = sgst.toFixed(2);
-  document.getElementById('FTotal').value = total.toFixed(2);
-
-}
-
-
-  function paiddue() {
-    let grandTotal = parseFloat(document.getElementById('FTotal').value) || 0;
-    let paid = parseFloat(document.getElementById('paid').value) || 0;
-    document.getElementById('due').value = (grandTotal - paid).toFixed(2);
-  }
-
-
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
-
-</body>
-
+        var whatsappNumber = prompt(
+          "Enter WhatsApp Number with country code (+91 for India):"
+        );
+        if (whatsappNumber) {
+          var url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+            message
+          )}`;
+          window.open(url, "_blank");
+        }
+      }
+    </script>
+  </body>
 </html>
